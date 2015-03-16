@@ -1,0 +1,23 @@
+<html ng-app>
+	<head>
+		<title>JavaBeat Tutorial</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="messages.js"></script>
+	</head>
+	<body>
+		<div style="width:50%">
+			<h2>JavaBeat Tutorial</h2>
+			<h2>GemFire + REST + AngularJS</h2>
+			<div ng-controller="fetch">
+				<h2>full json response:</h2>
+				<p>{{messages}}</p>
+				<h2>Messages:</h2>			
+				<ul ng-repeat="message in messages">
+					<p>Message:</p>
+					<p>{{message.message}}</p>
+					<a href='{{message["_links"]["self"]["href"]}}'>Go To Page Addressed Message : {{message._links.self.href}}</a>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
